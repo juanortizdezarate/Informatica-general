@@ -1,0 +1,56 @@
+h1 {
+    color: red;
+    text-align: center;
+}
+
+H2 {
+    color: green;
+    text-align: left;
+}
+
+
+body {
+background-color: #d9f7d9; /* verde claro */
+font-family: Arial, sans-serif;
+}
+
+/* Título principal */
+.titulo {
+color: darkgreen;
+text-align: center;
+}
+
+/* Menú de navegación */
+.menu {
+background-color: #b6f2b6;
+padding: 10px;
+list-style-type: none;
+}
+
+/* Estilo de los links del menú */
+.menu li {
+display: inline;
+margin-right: 15px;
+}
+
+.menu a {
+text-decoration: none;
+color: darkgreen;
+}
+
+/* Sección principal */
+.principal {
+margin: 20px;
+}
+
+/* Texto descriptivo */
+.descripcion {
+color: darkgreen;
+}
+
+/* Imagen (opcional) */
+img {
+display: block;
+margin: 20px auto;
+max-width: 300px;
+}
