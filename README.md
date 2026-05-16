@@ -16,6 +16,6 @@ La IA se utilizó para muchos de los procesos de creación de estas páginas. A 
 
 -	La alineación horizontal de una foto y un video, con sus respectivos títulos centrados en cada uno de los ítems.
 
--	Mejoras en la programación. Por ejemplo: me avisa que “El <figure> debería contener la imagen. Ahora la imagen está fuera del <figure>” Errores como esos, que no se observan en el resultado final, fueron corregidos.
+-	Mejoras en la programación. Por ejemplo: me avisa que “El figure debería contener la imagen. Ahora la imagen está fuera del figure” Errores como esos, que no se observan en el resultado final, fueron corregidos.
 
 -	La “limpieza” del código. Luego de trabajarlo muchos días habían quedado capas de instrucciones que en muchos casos se contradecían entre sí. Se usó la IA para limpiar la versión final.
