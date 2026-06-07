@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Preparación de Café</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .dark{
+            background-color: #222;
+            color: white;
+            padding: 15px;
+        }
+
+        .light{
+            background-color: #f0f0f0;
+            color: black;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="bienvenida">¡Esta es nuestra página de café!</h1>
+
+    <section id="instrucciones" class="light">
+        <h2>Cómo preparamos café</h2>
+        <ol>
+            <li>Calentar agua.</li>
+            <li>Colocar café molido en el filtro.</li>
+            <li>Verter el agua caliente.</li>
+            <li>Esperar unos minutos a qe el agua haga efecto en el café y servir.</li>
+        </ol>
+    </section>
+
+    <p id="despedida">¡Los esperamos!</p>
+
+    <script>
+
+        // 1. Personalizar bienvenida
+        let personalizar = confirm("¿Desea personalizar la bienvenida?");
+
+        if (personalizar) {
+            let nombre = prompt("Ingrese su nombre:");
+            document.getElementById("bienvenida").innerText =
+                "Bienvenido/a, " + nombre + ", a nuestra página de café";
+        } else {
+            document.getElementById("bienvenida").innerText =
+                "Bienvenido/a a nuestra página de café";
+        }
+
+        // 2. Dark mode para instrucciones
+        let darkMode = confirm("¿Desea leer las instrucciones en modo oscuro?");
+
+        let instrucciones = document.getElementById("instrucciones");
+
+        if (darkMode) {
+            instrucciones.className = "dark";
+        } else {
+            instrucciones.className = "light";
+        }
+
+        // 3. Saludo según la hora
+        let hora = Number(prompt("¿Qué hora es? (0 a 23)"));
+
+        let mensajeFinal = "";
+
+        if (hora >= 6 && hora < 12) {
+            mensajeFinal = "¡Buen día!";
+        } else if (hora >= 12 && hora < 20) {
+            mensajeFinal = "¡Buenas tardes!";
+        } else {
+            mensajeFinal = "¡Buenas noches!";
+        }
+
+        document.getElementById("despedida").innerText = mensajeFinal;
+
+    </script>
+
+</body>
+</html>
