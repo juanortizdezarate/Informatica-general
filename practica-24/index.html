@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tirar un dado</title>
+</head>
+<body>
+
+    <h1>Juego de Dados</h1>
+
+    <button onclick="tirarDado()">Tirar dado</button>
+
+    <p id="resultado"></p>
+
+    <img id="dado" src="img/1.gif" alt="Dado">
+
+    <script>
+
+        function tirarDado() {
+
+            let numero = Math.floor(Math.random() * 6) + 1;
+
+            document.getElementById("resultado").innerText =
+                "Salió el número " + numero;
+
+            document.getElementById("dado").src =
+                "img/" + numero + ".gif";
+        }
+
+    </script>
+
+</body>
+</html>
