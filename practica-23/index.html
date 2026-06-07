@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pupitres por Aula</title>
+</head>
+<body>
+
+    <h1>Control de Pupitres</h1>
+
+    <form>
+        <label>Aula 001:</label>
+        <input type="number" id="aula001"><br><br>
+
+        <label>Aula 101:</label>
+        <input type="number" id="aula101"><br><br>
+
+        <label>Aula 201:</label>
+        <input type="number" id="aula201"><br><br>
+
+        <label>Aula 301:</label>
+        <input type="number" id="aula301"><br><br>
+
+        <label>Aula 501:</label>
+        <input type="number" id="aula501"><br><br>
+
+        <button type="button" onclick="calcular()">Calcular</button>
+    </form>
+
+    <h2>Resultados</h2>
+
+    <p id="mayor"></p>
+    <p id="menor"></p>
+    <p id="comprar"></p>
+
+    <script>
+
+        function calcular() {
+
+            let aulas = ["001", "101", "201", "301", "501"];
+
+            let pupitres = [
+                Number(document.getElementById("aula001").value),
+                Number(document.getElementById("aula101").value),
+                Number(document.getElementById("aula201").value),
+                Number(document.getElementById("aula301").value),
+                Number(document.getElementById("aula501").value)
+            ];
+
+            let maximo = pupitres[0];
+            let minimo = pupitres[0];
+            let aulaMax = aulas[0];
+            let aulaMin = aulas[0];
+
+            let comprar = 0;
+
+            for (let i = 0; i < pupitres.length; i++) {
+
+                if (pupitres[i] > maximo) {
+                    maximo = pupitres[i];
+                    aulaMax = aulas[i];
+                }
+
+                if (pupitres[i] < minimo) {
+                    minimo = pupitres[i];
+                    aulaMin = aulas[i];
+                }
+
+                if (pupitres[i] < 80) {
+                    comprar += 80 - pupitres[i];
+                }
+            }
+
+            document.getElementById("mayor").innerText =
+                "El aula con más pupitres es la " + aulaMax +
+                " con " + maximo + " pupitres.";
+
+            document.getElementById("menor").innerText =
+                "El aula con menos pupitres es la " + aulaMin +
+                " con " + minimo + " pupitres.";
+
+            document.getElementById("comprar").innerText =
+                "Se deben comprar " + comprar +
+                " pupitres para completar todas las aulas con 80 pupitres.";
+        }
+
+    </script>
+
+</body>
+</html>
