@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Recomendador de Series</title>
+</head>
+<body>
+
+    <h1>Recomendador de Series</h1>
+
+    <form>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre">
+        <br><br>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad">
+        <br><br>
+
+        <label for="genero">Género favorito:</label>
+        <select id="genero">
+            <option value="comedia">Comedia</option>
+            <option value="accion">Acción</option>
+            <option value="romance">Romance</option>
+            <option value="ciencia ficcion">Ciencia ficción</option>
+        </select>
+
+        <br><br>
+
+        <button type="button" onclick="recomendar()">
+            Obtener recomendación
+        </button>
+
+    </form>
+
+    <h2 id="saludo"></h2>
+    <p id="recomendacion"></p>
+
+    <script>
+
+        function recomendar() {
+
+            let nombre = document.getElementById("nombre").value;
+            let edad = Number(document.getElementById("edad").value);
+            let genero = document.getElementById("genero").value;
+
+            let serie = "";
+
+            if (genero == "comedia") {
+
+                if (edad < 18) {
+                    serie = "Modern Family";
+                } else {
+                    serie = "The Office";
+                }
+
+            } else if (genero == "accion") {
+
+                if (edad < 18) {
+                    serie = "Avatar: The Last Airbender";
+                } else {
+                    serie = "Reacher";
+                }
+
+            } else if (genero == "romance") {
+
+                if (edad < 18) {
+                    serie = "Heartstopper";
+                } else {
+                    serie = "Bridgerton";
+                }
+
+            } else if (genero == "ciencia ficcion") {
+
+                if (edad < 18) {
+                    serie = "Stranger Things";
+                } else {
+                    serie = "Dark";
+                }
+
+            }
+
+            document.getElementById("saludo").innerText =
+                "¡Hola, " + nombre + "!";
+
+            document.getElementById("recomendacion").innerText =
+                "Según tu edad y tus gustos, te recomendamos la serie: " + serie;
+        }
+
+    </script>
+
+</body>
+</html>
