@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Alquiler de Equipos</title>
+</head>
+<body>
+
+    <h1>Presupuesto de Alquiler</h1>
+
+    <form>
+
+        <label>Cantidad de equipos:</label>
+        <input type="number" id="cantidad">
+        <br><br>
+
+        <label>Precio por equipo:</label>
+        <input type="number" id="precio">
+        <br><br>
+
+        <button type="button" onclick="calcular()">
+            Calcular presupuesto
+        </button>
+
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+
+        function calcular() {
+
+            let cantidad = Number(document.getElementById("cantidad").value);
+            let precio = Number(document.getElementById("precio").value);
+
+            let total = cantidad * precio;
+
+            if (total > 500000) {
+                total = total - (total * 10 / 100);
+            }
+
+            document.getElementById("resultado").innerText =
+                "Presupuesto total: $" + total;
+        }
+
+    </script>
+
+    <!--
+    Declaración de uso de IA
+
+    Se consultó una herramienta de IA para comprender cómo realizar
+    el cálculo del presupuesto total y aplicar un descuento condicional
+    utilizando JavaScript.
+
+    Se utilizó la sugerencia de emplear variables, la estructura
+    condicional if y el método getElementById() para obtener los datos
+    del formulario y mostrar el resultado mediante innerText.
+
+    Se descartaron propuestas más complejas, como el uso de arreglos,
+    funciones adicionales o librerías externas, ya que no eran necesarias
+    para resolver la consigna solicitada.
+    -->
+
+</body>
+</html>
